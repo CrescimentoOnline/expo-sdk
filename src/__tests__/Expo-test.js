@@ -38,18 +38,23 @@ describe(`importing Expo`, () => {
   });
 
   it(`throws a clear error in bare React Native`, () => {
+    const clearPropertiesInPlace = aThing => {
+      const propertyNames = Object.keys(aThing);
+      for (const propertyName of propertyNames) {
+        Object.defineProperty(aThing, propertyName, {
+          configurable: true,
+          enumerable: true,
+          writable: true,
+          value: undefined,
+        });
+      }
+    };
     // Clear all the native modules as a way to simulate running outside
     // of Expo
     const { NativeModules } = require('react-native');
-    const propertyNames = Object.keys(NativeModules);
-    for (const propertyName of propertyNames) {
-      Object.defineProperty(NativeModules, propertyName, {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        value: undefined,
-      });
-    }
+    const { NativeModulesProxy } = require('expo-react-native-adapter');
+    clearPropertiesInPlace(NativeModules);
+    clearPropertiesInPlace(NativeModulesProxy);
 
     // Silence "No native module found" warnings raised in erna and expo-constants
     const warn = console.warn;

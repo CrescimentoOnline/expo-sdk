@@ -236,7 +236,7 @@ module.exports = {
     return require('./SecureStore');
   },
   get Segment() {
-    return require('./Segment').default;
+    return require('expo-analytics-segment').Segment;
   },
   get SMS() {
     return require('expo-sms').SMS;
