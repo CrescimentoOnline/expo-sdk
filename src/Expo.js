@@ -205,7 +205,7 @@ module.exports = {
     return require('./MailComposer');
   },
   get MediaLibrary() {
-    return require('./MediaLibrary');
+    return require('expo-media-library').MediaLibrary;
   },
   get Pedometer() {
     if (Platform.OS === 'android') {
