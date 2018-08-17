@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NativeModules, requireNativeComponent, ViewPropTypes } from 'react-native';
@@ -43,7 +41,7 @@ export default class BarCodeScanner extends React.Component {
     barCodeTypes: Object.values(BarCodeScannerManager.BarCodeType),
   };
 
-  static readFromURL(url: string, barCodeTypes: Array<string | number>) {
+  static readFromURL(url, barCodeTypes) {
     return BarCodeScannerManager.readBarCodeFromURL(url, barCodeTypes);
   }
 
