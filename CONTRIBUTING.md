@@ -1,3 +1,5 @@
+**IMPORTANT:** Submit all issues and PRs to the main Expo repository: https://github.com/expo/expo/tree/master/packages/expo. The `expo-sdk` repository is deprecated and will be removed fall 2018.
+
 We've set up Expo SDK to help us keep it reliable and clean and be confident in the changes we're making to it.
 
 ## Getting Started
@@ -44,7 +46,7 @@ Finally, unit tests can go a long way. The first project that used Jest (before 
 
 ## Integration tests
 
-Our integration tests are under `apps/test-suite` in Universe. The `test-suite` project is an Expo project we run on our devices. It also can run in the simulator but has access to fewer APIs.
+Our integration tests are under `apps/test-suite`. The `test-suite` project is an Expo project we run on our devices. It also can run in the simulator but has access to fewer APIs.
 
 If you make changes to native code, update `test-suite` too.
 
@@ -54,7 +56,7 @@ When a PR to Universe or a commit to the master branch contains changes to Expo 
 
 ## Linting
 
-We use ESLint with Prettier to detect some bugs and apply some of our style and formatting conventions. Before sending a PR, run `yarn lint` to make sure Expo SDK stays clean. You also can run `yarn lint -- --fix` to automatically fix several lint errors and warnings and run Prettier.
+We use ESLint with Prettier to detect some bugs and apply some of our style and formatting conventions. Before sending a PR, run `yarn lint` to make sure Expo SDK stays clean. You also can run `yarn lint --fix` to automatically fix several lint errors and warnings and run Prettier.
 
 Most popular editors have ESLint plugins. They show errors and warnings inline and add commands to auto-fix them.
 
